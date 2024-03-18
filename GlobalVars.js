@@ -1,4 +1,4 @@
-let scene = 3;
+let scene = 1;
 
 const SCENE = {
     DINING_ROOM: 0,

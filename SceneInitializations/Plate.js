@@ -1,15 +1,19 @@
-class Lettuce {
+class Plate {
     constructor() {
         this.dragging = false;
-        this.scene = SCENE.FRIDGE;
-        this.x = (windowWidth / 10) * 9;
-        this.y = (windowHeight / 4) * 3 - 10;
-        this.size = 60;
+        this.scene = SCENE.KITCHEN;
+        this.x = windowWidth / 2;
+        this.y = (windowHeight / 3) * 2 + 100;
+        this.size = 100;
     }
     show() {
-        fill(color(42, 200, 0));
+        fill(color(255, 255, 255));
         if (this.dragging) this.drag();
-        if (scene == this.scene) ellipse(this.x, this.y, this.size, this.size);
+        if (scene == this.scene) {
+            stroke(0);
+            ellipse(this.x, this.y, this.size, this.size);
+            ellipse(this.x, this.y, 40, 40);
+        }
     }
     drag() {
         this.x = mouseX;

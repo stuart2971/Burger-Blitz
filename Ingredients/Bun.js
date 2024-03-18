@@ -1,15 +1,15 @@
-class Lettuce {
+class Bun {
     constructor() {
         this.dragging = false;
-        this.scene = SCENE.FRIDGE;
-        this.x = (windowWidth / 10) * 9;
-        this.y = (windowHeight / 4) * 3 - 10;
-        this.size = 60;
+        this.scene = SCENE.PANTRY;
+        this.x = windowWidth - 100;
+        this.y = topShelfHeight - 10;
+        this.size = 50;
     }
     show() {
-        fill(color(42, 200, 0));
+        fill(color(204, 153, 0));
         if (this.dragging) this.drag();
-        if (scene == this.scene) ellipse(this.x, this.y, this.size, this.size);
+        if (scene == this.scene) ellipse(this.x, this.y, this.size, 30);
     }
     drag() {
         this.x = mouseX;

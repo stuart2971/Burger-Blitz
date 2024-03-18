@@ -17,10 +17,10 @@ class Tomato {
         this.scene = scene;
     }
     isMouseInside() {
-        if (dist(mouseX, mouseY, this.x, this.y) < this.size) return true;
+        if (dist(mouseX, mouseY, this.x, this.y) < this.size / 2) return true;
         return false;
     }
     setDragging(isDragging) {
-        this.dragging = isDragging;
+        if (scene == this.scene) this.dragging = isDragging;
     }
 }

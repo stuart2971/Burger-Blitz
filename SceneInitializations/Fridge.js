@@ -15,5 +15,4 @@ function initFridge() {
     // Lettuce
     fill(INGREDIENTS.LETTUCE.COLOUR);
     ellipse((windowWidth / 10) * 9, topShelfHeight * 3 - 10, 60, 60);
-    // console.log("In kitchen: " + scene)
 }
