@@ -9,9 +9,9 @@ function initFridge() {
     const t = INGREDIENTS.TOMATO;
     fill(t.COLOUR);
     ellipse(t.X, t.Y, t.SIZE, t.SIZE);
-    // Cheese
-    fill(INGREDIENTS.CHEESE.COLOUR);
-    rect(windowWidth - 100, topShelfHeight - 20, 50, 30);
+    // Patty
+    fill(INGREDIENTS.PATTY.COLOUR);
+    ellipse(windowWidth - 100, topShelfHeight, 50, 30);
     // Lettuce
     fill(INGREDIENTS.LETTUCE.COLOUR);
     ellipse((windowWidth / 10) * 9, topShelfHeight * 3 - 10, 60, 60);

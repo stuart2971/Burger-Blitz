@@ -20,12 +20,16 @@ function mousePressed() {
         activeIngredients.push(new Tomato());
     }
     // Lettuce
-    if ((mouseInEllipse(windowWidth / 10) * 9, topShelfHeight * 3 - 10, 60)) {
+    if (mouseInEllipse((windowWidth / 10) * 9, topShelfHeight * 3 - 10, 60)) {
         activeIngredients.push(new Lettuce());
     }
     // Onion
     if (mouseInEllipse(windowWidth / 10, topShelfHeight * 3 - 10, 30)) {
         activeIngredients.push(new Onion());
+    }
+    // Patty
+    if (mouseInEllipse(windowWidth - 100, topShelfHeight, 30)) {
+        activeIngredients.push(new Patty());
     }
     // Bun
     if (mouseInEllipse(windowWidth - 100, topShelfHeight - 10, 25)) {
@@ -36,8 +40,10 @@ function mousePressed() {
     if (mouseInEllipse(windowWidth / 2, (windowHeight / 3) * 2 + 100, 100)) {
         if (!plateIsActive()) activeIngredients.push(new Plate());
     }
-
     for (let i = 0; i < activeIngredients.length; i++) {
+        if (activeIngredients[i].constructor.name !== "Plate") {
+            activeIngredients[i].insidePlate(activeIngredients[0]);
+        }
         if (activeIngredients[i].isMouseInside()) {
             activeIngredients[i].setDragging(true);
         }

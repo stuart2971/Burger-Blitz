@@ -1,4 +1,5 @@
 let scene = 1;
+let score = 0;
 
 const SCENE = {
     DINING_ROOM: 0,
@@ -20,8 +21,8 @@ function setGlobalDynamicVars() {
             Y: topShelfHeight * 3 - 10,
             SIZE: 30,
         },
-        CHEESE: {
-            COLOUR: color(204, 153, 0),
+        PATTY: {
+            COLOUR: color(120, 56, 24),
         },
         LETTUCE: {
             COLOUR: color(42, 200, 0),

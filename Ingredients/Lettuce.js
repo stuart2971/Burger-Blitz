@@ -1,6 +1,6 @@
-class Lettuce {
+class Lettuce extends Ingredient {
     constructor() {
-        this.dragging = false;
+        super();
         this.scene = SCENE.FRIDGE;
         this.x = (windowWidth / 10) * 9;
         this.y = (windowHeight / 4) * 3 - 10;
@@ -8,19 +8,7 @@ class Lettuce {
     }
     show() {
         fill(color(42, 200, 0));
-        if (this.dragging) this.drag();
+        if (this.dragging) super.drag();
         if (scene == this.scene) ellipse(this.x, this.y, this.size, this.size);
-    }
-    drag() {
-        this.x = mouseX;
-        this.y = mouseY;
-        this.scene = scene;
-    }
-    isMouseInside() {
-        if (dist(mouseX, mouseY, this.x, this.y) < this.size / 2) return true;
-        return false;
-    }
-    setDragging(isDragging) {
-        if (scene == this.scene) this.dragging = isDragging;
     }
 }

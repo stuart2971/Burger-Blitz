@@ -27,4 +27,5 @@ class Plate {
     setDragging(isDragging) {
         if (scene == this.scene) this.dragging = isDragging;
     }
+    addPoints() {}
 }
