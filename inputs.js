@@ -15,25 +15,30 @@ function mousePressed() {
     }
     // Because of how global variables work in p5, these will have to be hardcoded in
 
-    // Tomato
-    if (mouseInEllipse(windowWidth / 10, topShelfHeight * 3 - 10, 30)) {
-        activeIngredients.push(new Tomato());
+    if (scene === SCENE.PANTRY) {
+        // Bun
+        if (mouseInEllipse(windowWidth - 100, topShelfHeight - 10, 25)) {
+            activeIngredients.push(new Bun());
+        } // Onion
+        if (mouseInEllipse(windowWidth / 10, topShelfHeight * 3 - 10, 30)) {
+            activeIngredients.push(new Onion());
+        }
     }
-    // Lettuce
-    if (mouseInEllipse((windowWidth / 10) * 9, topShelfHeight * 3 - 10, 60)) {
-        activeIngredients.push(new Lettuce());
-    }
-    // Onion
-    if (mouseInEllipse(windowWidth / 10, topShelfHeight * 3 - 10, 30)) {
-        activeIngredients.push(new Onion());
-    }
-    // Patty
-    if (mouseInEllipse(windowWidth - 100, topShelfHeight, 30)) {
-        activeIngredients.push(new Patty());
-    }
-    // Bun
-    if (mouseInEllipse(windowWidth - 100, topShelfHeight - 10, 25)) {
-        activeIngredients.push(new Bun());
+    if (scene === SCENE.FRIDGE) {
+        // Tomato
+        if (mouseInEllipse(windowWidth / 10, topShelfHeight * 3 - 10, 30)) {
+            activeIngredients.push(new Tomato());
+        }
+        // Lettuce
+        if (
+            mouseInEllipse((windowWidth / 10) * 9, topShelfHeight * 3 - 10, 60)
+        ) {
+            activeIngredients.push(new Lettuce());
+        }
+        // Patty
+        if (mouseInEllipse(windowWidth - 100, topShelfHeight, 30)) {
+            activeIngredients.push(new Patty());
+        }
     }
 
     // Plate
@@ -60,4 +65,5 @@ function mouseReleased() {
     for (let i = 0; i < activeIngredients.length; i++) {
         activeIngredients[i].dragging = false;
     }
+    activeIngredients[0].addPoints();
 }

@@ -1,4 +1,4 @@
-let scene = 1;
+let scene = 0;
 let score = 0;
 
 const SCENE = {
@@ -10,6 +10,7 @@ const SCENE = {
 
 let selectedIngredient;
 let activeIngredients = [];
+let uid = 0;
 
 function setGlobalDynamicVars() {
     topShelfHeight = windowHeight / 4;

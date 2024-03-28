@@ -27,4 +27,8 @@ function draw() {
     }
     fill(color(255, 0, 0));
     ellipse(mouseX, mouseY, 10, 10);
+    // Score
+    textSize(32);
+    fill(color(255, 255, 255));
+    text(score, windowWidth / 2, 50);
 }
