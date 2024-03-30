@@ -10,6 +10,9 @@ class Ingredient {
         this.offsetY = 0;
         uid++;
     }
+    getClassName() {
+        return this.constructor.name;
+    }
     drag() {
         this.x = mouseX + this.offsetX;
         this.y = mouseY + this.offsetY;

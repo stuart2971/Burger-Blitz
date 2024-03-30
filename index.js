@@ -1,6 +1,7 @@
 function setup() {
     createCanvas(windowWidth, windowHeight);
     activeIngredients[0] = new Plate();
+    buildOrder();
 }
 
 let topShelfHeight, INGREDIENTS;

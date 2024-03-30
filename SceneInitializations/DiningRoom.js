@@ -1,16 +1,21 @@
-let toppings = [];
-let orderSentence = `${uhhh()} Can I get a burger with${uhhh()} ${buildOrder()}`;
+let burger = ["Bun", "Bun", "Patty"];
+let orderSentence;
 
 function uhhh() {
     if (Math.random() < 0.1) return "...uhhhhhhh...";
     else return "";
 }
-function buildOrder() {
-    if (Math.random() < 0.6) toppings.push("lettuce");
-    if (Math.random() < 0.5) toppings.push("tomato");
-    if (Math.random() < 0.3) toppings.push("onion");
 
-    return toppings.join(" and ");
+function buildOrder() {
+    burger = ["Bun", "Bun", "Patty"];
+    orderSentence = `${uhhh()} Can I get a burger with${uhhh()} ${randomizeOrder()}`;
+}
+function randomizeOrder() {
+    if (Math.random() < 0.6) burger.push("Lettuce");
+    if (Math.random() < 0.5) burger.push("Tomato");
+    if (Math.random() < 0.3) burger.push("Onion");
+
+    return burger.slice(3).join(" and ");
 }
 function initDiningRoom() {
     //Counter

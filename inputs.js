@@ -65,5 +65,5 @@ function mouseReleased() {
     for (let i = 0; i < activeIngredients.length; i++) {
         activeIngredients[i].dragging = false;
     }
-    activeIngredients[0].addPoints();
+    activeIngredients[0].submitOrder();
 }
