@@ -1,15 +1,13 @@
 function initPantry() {
-    //Shelves
-    fill(color(153, 102, 51));
-    rect(0, topShelfHeight, windowWidth, 50);
-    rect(0, topShelfHeight * 2, windowWidth, 50);
-    rect(0, topShelfHeight * 3, windowWidth, 50);
+    image(pantryImage, 0, 0, windowWidth, windowHeight);
 
     // Onion
+    const o = INGREDIENTS.ONION;
     fill(color(255, 255, 255));
-    ellipse(windowWidth / 10, topShelfHeight * 3 - 10, 30, 30);
+    // ellipse(o.X, o.Y, o.SIZE, o.SIZE);
+    image(onionImage, o.X - 24, o.Y - 25, o.SIZE, o.SIZE);
 
     // Buns
-    fill(color(204, 153, 0));
-    ellipse(windowWidth - 100, topShelfHeight - 10, 50, 30);
+    const b = INGREDIENTS.BUN;
+    image(bunImage, b.X - 25, b.Y - 20, b.SIZE, b.SIZE);
 }

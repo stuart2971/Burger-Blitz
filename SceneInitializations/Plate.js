@@ -3,17 +3,18 @@ class Plate extends Ingredient {
         super();
         this.dragging = false;
         this.scene = SCENE.KITCHEN;
-        this.x = windowWidth / 2;
-        this.y = (windowHeight / 3) * 2 + 100;
-        this.size = 100;
+        this.x = windowWidth / 2 - 75;
+        this.y = (windowHeight / 3) * 2 + 25;
+        this.size = 150;
     }
     show() {
         fill(color(255, 255, 255));
         if (this.dragging) this.drag();
         if (scene == this.scene) {
-            stroke(0);
-            ellipse(this.x, this.y, this.size, this.size);
-            ellipse(this.x, this.y, 40, 40);
+            // stroke(0);
+            // ellipse(this.x, this.y, 100, 100);
+            // ellipse(this.x, this.y, 40, 40);
+            image(plateImage, this.x - 75, this.y - 80, this.size, this.size);
         }
     }
     submitOrder() {

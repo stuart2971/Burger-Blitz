@@ -17,10 +17,10 @@ function mousePressed() {
 
     if (scene === SCENE.PANTRY) {
         // Bun
-        if (mouseInEllipse(windowWidth - 100, topShelfHeight - 10, 25)) {
+        if (mouseInEllipse(windowWidth - 400, topShelfHeight + 100, 50)) {
             activeIngredients.push(new Bun());
         } // Onion
-        if (mouseInEllipse(windowWidth / 10, topShelfHeight * 3 - 10, 30)) {
+        if (mouseInEllipse(300, topShelfHeight + 110, 50)) {
             activeIngredients.push(new Onion());
         }
     }
@@ -31,20 +31,27 @@ function mousePressed() {
         }
         // Lettuce
         if (
-            mouseInEllipse((windowWidth / 10) * 9, topShelfHeight * 3 - 10, 60)
+            mouseInEllipse(
+                (windowWidth / 10) * 8 + 20,
+                (windowHeight / 4) * 3 - 110,
+                60
+            )
         ) {
             activeIngredients.push(new Lettuce());
         }
         // Patty
-        if (mouseInEllipse(windowWidth - 100, topShelfHeight, 30)) {
+        if (mouseInEllipse(windowWidth - 200, topShelfHeight + 120, 30)) {
             activeIngredients.push(new Patty());
         }
     }
 
     // Plate
-    if (mouseInEllipse(windowWidth / 2, (windowHeight / 3) * 2 + 100, 100)) {
+    if (
+        mouseInEllipse(windowWidth / 2 - 75, (windowHeight / 3) * 2 + 25, 150)
+    ) {
         if (!plateIsActive()) activeIngredients.push(new Plate());
     }
+
     for (let i = 0; i < activeIngredients.length; i++) {
         if (activeIngredients[i].constructor.name !== "Plate") {
             activeIngredients[i].insidePlate(activeIngredients[0]);
