@@ -54,4 +54,20 @@ function draw() {
     textSize(32);
     fill(color(255, 255, 255));
     text(score, windowWidth / 2, 50);
+    // Time
+    if (frameCount % 60 == 0 && timer > 0) {
+        timer--;
+    }
+    textSize(32);
+    fill(color(255, 255, 255));
+    text(timer, windowWidth - 100, 50);
+    if (timer === 0) {
+        text(
+            `Game Over. Score: ${score}`,
+            windowWidth / 2 - 100,
+            windowHeight / 2
+        );
+        scene = 0;
+        noLoop();
+    }
 }

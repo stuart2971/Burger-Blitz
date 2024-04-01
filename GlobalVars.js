@@ -1,5 +1,6 @@
-let scene = 1;
+let scene = 0;
 let score = 0;
+let timer = 60;
 
 const SCENE = {
     DINING_ROOM: 0,
