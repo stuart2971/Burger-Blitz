@@ -12,6 +12,7 @@ const SCENE = {
 let selectedIngredient;
 let activeIngredients = [];
 let uid = 0;
+let topShelfHeight, INGREDIENTS;
 
 function setGlobalDynamicVars() {
     topShelfHeight = windowHeight / 4;
@@ -46,6 +47,11 @@ function setGlobalDynamicVars() {
             X: 300,
             Y: topShelfHeight + 110,
             SIZE: 50,
+        },
+        PLATE: {
+            X: windowWidth / 2 - 75,
+            Y: (windowHeight / 3) * 2 + 25,
+            SIZE: 150,
         },
     };
 }

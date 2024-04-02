@@ -26,8 +26,7 @@ function setup() {
     diningRoomImage = loadImage("SceneInitializations/images/diningRoom.jpg");
     personImage = loadImage("SceneInitializations/images/person.webp");
 }
-
-let topShelfHeight, INGREDIENTS;
+let errors = [];
 function draw() {
     background(0);
     setGlobalDynamicVars();
@@ -48,8 +47,6 @@ function draw() {
     for (let i = 0; i < activeIngredients.length; i++) {
         activeIngredients[i].show();
     }
-    fill(color(255, 0, 0));
-    ellipse(mouseX, mouseY, 10, 10);
     // Score
     textSize(32);
     fill(color(255, 255, 255));
@@ -62,12 +59,33 @@ function draw() {
     fill(color(255, 255, 255));
     text(timer, windowWidth - 100, 50);
     if (timer === 0) {
+        fill(0);
+        rect(windowWidth / 2 - 150, windowHeight / 2, 400, 100);
+        fill(255);
         text(
             `Game Over. Score: ${score}`,
             windowWidth / 2 - 100,
-            windowHeight / 2
+            windowHeight / 2 + 50
         );
         scene = 0;
         noLoop();
+    }
+    // Errors
+    let errorMessageY = 50;
+
+    for (let i = 0; i < errors.length; i++) {
+        fill(255, 0, 0);
+        if (errors[i].timer > 0) {
+            text(errors[i].message, 50, errorMessageY);
+            errorMessageY += 50;
+        }
+        if (errors[i].timer <= 0) {
+            errors.splice(i, 1);
+            errorMessageY -= 50;
+        }
+
+        if (frameCount % 60 == 0 && errors[i].timer > 0) {
+            errors[i].timer--;
+        }
     }
 }

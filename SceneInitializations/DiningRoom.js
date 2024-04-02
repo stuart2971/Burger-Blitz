@@ -8,14 +8,18 @@ function uhhh() {
 
 function buildOrder() {
     burger = ["Bun", "Patty"];
-    orderSentence = `${uhhh()} Can I get a burger with${uhhh()} ${randomizeOrder()}`;
+    const addons = randomizeOrder();
+    if (addons === "") orderSentence = `${uhhh()} Can I get a plain burger`;
+    else orderSentence = `${uhhh()} Can I get a burger ${addons}`;
 }
 function randomizeOrder() {
     if (Math.random() < 0.6) burger.push("Lettuce");
     if (Math.random() < 0.5) burger.push("Tomato");
     if (Math.random() < 0.3) burger.push("Onion");
 
-    return burger.slice(2).join(" and ");
+    if (burger.length > 2)
+        return `with ${uhhh()} ${burger.slice(2).join(" and ")}`;
+    return "";
 }
 function initDiningRoom() {
     // Background
